@@ -17,7 +17,7 @@ void main() {
         return;
     }
 
-    SDL_SetRenderDrawColor(rend, 255, 0, 0,SDL_ALPHA_OPAQUE);
+    SDL_SetRenderDrawColor(rend, 255, 255, 255,SDL_ALPHA_OPAQUE);
     SDL_RenderClear(rend);
     SDL_RenderPresent(rend);
     SDL_Event evt;
@@ -28,12 +28,6 @@ void main() {
             switch (evt.type) {
                 case SDL_WINDOWEVENT:
                     printf("window event\n");
-                    break;
-                case SDL_MOUSEMOTION:
-                    printf("mouse motion\n");
-                    SDL_SetRenderDrawColor(rend, 0, 255, 0, SDL_ALPHA_OPAQUE);
-                    SDL_RenderDrawPoint(rend, evt.motion.x, evt.motion.y);
-                    SDL_RenderPresent(rend);
                     break;
                 case SDL_QUIT:
                     printf("quitting\n");
